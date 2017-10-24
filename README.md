@@ -8,7 +8,7 @@ then store it in a dictionary and redirect to full URL when requested with
 short name. Server will use Post/Redirect/Get design pattern.
 
 
-Hosted on Heroku.
+Hosted on Heroku @ <http://make-ur-long-url-shorter.herokuapp.com/>
 
 #### External Dependencies:
 * requests
