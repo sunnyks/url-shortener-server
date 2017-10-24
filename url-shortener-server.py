@@ -3,6 +3,7 @@
 import http.server
 import requests
 from urllib.parse import unquote, parse_qs
+import os
 
 memory = {}
 
@@ -94,7 +95,9 @@ class Shortener(http.server.BaseHTTPRequestHandler):
             self.wfile.write("Couldn't fetch '{}'".format(longurl).encode())
 
 if __name__ == '__main__':
-    server_address = ('', 8000)
+    # Get PORT number using environmental variable
+    port = int(os.environ.get('PORT', 8000))
+    server_address = ('', port)
     http_lol = http.server.HTTPServer(server_address, Shortener)
     # Get served.
     http_lol.serve_forever()
